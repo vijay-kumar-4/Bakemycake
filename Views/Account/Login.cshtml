@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@model Auth_Forms.Models.User
+@using (Html.BeginForm("Login", "Account", FormMethod.Post,new { @class="form-group"}))
+{
+<div class="row">
+    <div class="col-lg-4 col-md-3 col-sm-6 col-xs-12">
+        <div class="jumbotron center-block">
+            @Html.LabelFor(model => model.Email)
+            @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(model => model.Password)
+            @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+            <br />
+            <input type="submit" value="Login" id="Submit" />
+        </div>
+    </div>
+</div>
+}
